@@ -1,11 +1,148 @@
-@import 'tailwindcss';
+:root {
+    --marino: #2F3A53;
+    --teal-electrico: #14B8A6;
+    --naranja-sport: #F97316;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* Estilos personalizados sobre Bootstrap */
+.bg-marino {
+    background-color: var(--marino) !important;
+}
+
+.text-teal {
+    color: var(--teal-electrico) !important;
+}
+
+.btn-teal {
+    background-color: var(--teal-electrico);
+    color: var(--marino);
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+}
+
+.btn-teal:hover {
+    background-color: #119f8f;
+    color: white;
+}
+
+.btn-outline-white {
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.btn-outline-white:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.card-deportiva {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-deportiva:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.badge-deporte {
+    background-color: rgba(20, 184, 166, 0.1);
+    color: var(--teal-electrico);
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.hero-bg {
+    background-image:
+        linear-gradient(105deg, rgba(47,58,83,0.97) 40%, rgba(47,58,83,0.55) 100%),
+        url('/images/cancha.png');
+    background-size: cover;
+    background-position: center;
+}
+.hero-image-card {
+    width: 100%;
+    max-width: 420px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.12);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    overflow: hidden; /* 👈 esto faltaba */
+}
+/* Cards de deportes */
+.deporte-card img {
+    transition: transform 0.4s ease;
+}
+.deporte-card:hover img {
+    transform: scale(1.07);
+}
+.deporte-overlay {
+    inset: 0;
+    background: linear-gradient(to top, rgba(47,58,83,0.92) 40%, rgba(47,58,83,0.2) 100%);
+    transition: background 0.3s ease;
+}
+.deporte-card:hover .deporte-overlay {
+    background: linear-gradient(to top, rgba(20,184,166,0.85) 30%, rgba(47,58,83,0.3) 100%);
+}
+/* Footer links */
+.footer-link {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s ease;
+}
+.footer-link:hover {
+    color: #14B8A6;
+}
+
+/* Redes sociales */
+.social-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+.social-icon:hover {
+    background-color: #14B8A6;
+    color: #2F3A53;
+    transform: translateY(-3px);
+}
+
+/* Fade-in al scrollear */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.evento-img-card img {
+    transition: transform 0.4s ease;
+}
+.evento-img-card:hover img {
+    transform: scale(1.05);
 }
